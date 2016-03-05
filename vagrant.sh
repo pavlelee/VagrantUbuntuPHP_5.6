@@ -23,7 +23,7 @@ if [ ! -t 0 ]; then
 fi
 
 # install required packages
-apt-get install -y php5 php5-fpm php5-mysql php5-mongo php5-curl php5-mcrypt nginx curl
+apt-get install -y php5 php5-fpm php5-mysql php5-mongo php5-curl php5-mcrypt php5-xdebug nginx curl
 
 # install composer
 if [ ! -f /usr/local/bin/composer ]; then
@@ -35,3 +35,11 @@ else
 fi
 
 echo 'include /vagrant/vhosts/*;' >> /etc/nginx/sites-enabled/default
+
+XDEBUG_CONF = <<EOF
+xdebug.remote_enable = On
+xdebug.remote_host = 192.168.0.230
+xdebug.remote_autostart = On
+EOF
+
+echo "${XDEBUG_CONF}" >> /etc/php5/mods-available/xdebug.ini
