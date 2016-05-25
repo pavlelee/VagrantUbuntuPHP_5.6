@@ -36,10 +36,4 @@ fi
 
 echo 'include /vagrant/vhosts/*;' >> /etc/nginx/sites-enabled/default
 
-XDEBUG_CONF=<<EOF
-xdebug.remote_enable = On
-xdebug.remote_host = 192.168.0.230
-xdebug.remote_autostart = On
-EOF
-
-echo "${XDEBUG_CONF}" >> /etc/php5/mods-available/xdebug.ini
+. xdebug.sh
