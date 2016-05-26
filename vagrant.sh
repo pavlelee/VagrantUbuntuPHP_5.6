@@ -11,6 +11,11 @@ apt-get update
 
 # ------- PPA's -------
 
+#php7
+#sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
+#sudo apt-get update
+
+
 # utility to be able to use apt-add-repository
 apt-get install -y python-software-properties
 
@@ -23,7 +28,7 @@ if [ ! -t 0 ]; then
 fi
 
 # install required packages
-apt-get install -y php5 php5-fpm php5-mysql php5-mongo php5-curl php5-mcrypt php5-xdebug nginx curl
+apt-get install -y php5 php5-fpm php5-mysql php5-mongo php5-redis php5-curl php5-mcrypt php5-xdebug php5-intl nginx curl
 
 # install composer
 if [ ! -f /usr/local/bin/composer ]; then
