@@ -70,4 +70,10 @@ Vagrant.configure(2) do |config|
   #   sudo apt-get install -y apache2
   # SHELL
   config.vm.provision "shell", path: "./vagrant.sh"
+
+  # 每次启动都执行restart，让文件映射之后的nginx配置生效
+  $shell = <<-SHELL
+    sudo service nginx restart > /dev/null 2>&1
+  SHELL
+  config.vm.provision "shell", inline: $shell, run: "always"
 end
