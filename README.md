@@ -7,6 +7,8 @@
  - mongo
  - redis
  - xdebug
+ - composer
+ - git
  - phpstorm断点调试
 
 2. 运行
@@ -16,3 +18,11 @@
     ```
     vagrant up
     ```
+
+3. 常用命令
+ - 连接box：``` vagrant ssh ```
+ - 切换root用户：``` sudo su - ```
+ - 重启nginx：``` service nginx restart ```
+ - 重启php-fpm：``` service php-fpm restart ```
+ - composer：``` composer ```
+ - git：``` git -h ```
