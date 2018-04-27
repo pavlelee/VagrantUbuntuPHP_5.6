@@ -1,4 +1,4 @@
-#Ubuntu的php开发环境5.6
+# Ubuntu的php开发环境5.6
 
 1. 特点
  - php5.6
